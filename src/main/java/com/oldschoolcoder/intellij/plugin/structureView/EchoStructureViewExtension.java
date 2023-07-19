@@ -26,7 +26,7 @@ public class EchoStructureViewExtension implements StructureViewExtension {
             @Override
             public void visitElement(@NotNull PsiElement element) {
                 switch (element.getText()) {
-                    case "GET", "POST" -> {
+                    case "GET", "POST", "PUT", "DELETE", "PATCH" -> {
                         try {
                             var expr = ((GoArgumentList) element.getParent().getNextSibling()).getExpressionList();
                             arr.add(new EchoStructureViewTreeElement(
