@@ -27,11 +27,15 @@ public class EchoStructureViewExtension implements StructureViewExtension {
             public void visitElement(@NotNull PsiElement element) {
                 switch (element.getText()) {
                     case "GET", "POST" -> {
-                        var expr = ((GoArgumentList) element.getParent().getNextSibling()).getExpressionList();
-                        arr.add(new EchoStructureViewTreeElement(
-                                (NavigatablePsiElement) (PsiTreeUtil.getParentOfType(element, GoExpression.class)),
-                                element.getText() + " " + expr.get(0).getText()
-                        ));
+                        try {
+                            var expr = ((GoArgumentList) element.getParent().getNextSibling()).getExpressionList();
+                            arr.add(new EchoStructureViewTreeElement(
+                                    (NavigatablePsiElement) (PsiTreeUtil.getParentOfType(element, GoExpression.class)),
+                                    element.getText() + " " + expr.get(0).getText()
+                            ));
+                        } catch (NullPointerException | IndexOutOfBoundsException e) {
+                            break;
+                        }
                     }
                 }
                 super.visitElement(element);
