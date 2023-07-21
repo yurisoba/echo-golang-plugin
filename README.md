@@ -8,3 +8,7 @@ An echo framework plugin for Goland IDE.
 ## Features
 - Navigatable echo Route handler in Structure View
 - Nested route grouping
+
+## Todo
+- Fix item icon
+
