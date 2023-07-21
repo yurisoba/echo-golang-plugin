@@ -7,6 +7,4 @@ An echo framework plugin for Goland IDE.
 
 ## Features
 - Navigatable echo Route handler in Structure View
-
-## Todo
-- Support echo.Group nesting
+- Nested route grouping

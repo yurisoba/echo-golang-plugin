@@ -9,10 +9,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class EchoStructureViewTreeElement implements StructureViewTreeElement, ItemPresentation {
     final NavigatablePsiElement val;
     final String path;
+    public ArrayList<EchoStructureViewTreeElement> groups = new ArrayList<>();
+    public ArrayList<EchoStructureViewTreeElement> routes = new ArrayList<>();
     public EchoStructureViewTreeElement(NavigatablePsiElement elem, String path) {
         val = elem;
         this.path = path;
@@ -30,7 +33,10 @@ public class EchoStructureViewTreeElement implements StructureViewTreeElement, I
 
     @Override
     public TreeElement @NotNull [] getChildren() {
-        return TreeElement.EMPTY_ARRAY;
+        var ret = new ArrayList<TreeElement>(groups.size() + routes.size());
+        ret.addAll(groups);
+        ret.addAll(routes);
+        return ret.toArray(TreeElement[]::new);
     }
 
     @Override
