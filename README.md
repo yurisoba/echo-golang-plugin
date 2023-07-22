@@ -11,4 +11,6 @@ An echo framework plugin for Goland IDE.
 
 ## Todo
 - Fix item icon
-
+- Navigatable route name
+- Better documentation
+- Improve parsing stability
