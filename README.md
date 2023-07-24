@@ -1,4 +1,5 @@
 # echo-golang-plugin
+[![JetBrains Plugins](https://img.shields.io/jetbrains/plugin/v/22322)](https://plugins.jetbrains.com/plugin/22322-echo)
 
 An echo framework plugin for Goland IDE.
 
