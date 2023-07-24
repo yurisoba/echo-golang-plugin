@@ -8,7 +8,7 @@
     <name>Echo</name>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-    <vendor email="tgtay+jpl@posteo.jp" url="https://www.oldschoolcoder.com">Tiong Guan Tay</vendor>
+    <vendor email="tgtay+jpl@posteo.jp">Tiong Guan Tay</vendor>
 
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
